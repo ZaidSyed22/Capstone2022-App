@@ -3,13 +3,13 @@
 // takes in rentGrowth, capex, and vacancy as a % value
 
 
-export default function CalcIncome(rent, rentGrowth, capex, vacancy, periods) {
+export default function CalcIncome(rent, rentGrowth, capex, vacancy, period) {
     let cashFlow = rent * (1-capex) * (1-vacancy)
 
     let xAxis = [1]
     let yAxis = [cashFlow]
 
-    for(i=2; i<=periods; i++) {
+    for(i=2; i<=period; i++) {
         xAxis.push(i)
         yAxis.push(yAxis[i-2] * (1+rentGrowth))
     }
