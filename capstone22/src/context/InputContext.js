@@ -1,17 +1,40 @@
 import { createContext, useState } from "react";
 
-export const CalcContext = createContext();
+export const InputContext = createContext();
 
-export function CalcProvider({children}){
-    // rent, rentGrowth, capex, vacancy, periods
-    const [rent, setRent] = useState();
+export function InputProvider({children}){
+    const[address, setAddress] = useState()
+    const[city, setCity] = useState()
+    const[state, setState] = useState()
+    const[zip, setZip] = useState()
+    const[sf, setSf] = useState()
+    const[units, setUnits] = useState()
+    const[rent, setRent] = useState()
+    const [purchasePrice, setPurchasePrice] = useState();
     const [rentGrowth, setRentGrowth] = useState();
     const [capex, setCapex] = useState();
     const [vacancy, setVacancy] = useState();
     const [period, setPeriod] = useState();
-    const [purchasePrice, setPurchasePrice] = useState();
     const [capRate, setCapRate] = useState();
 
+    function updateAddress(newValue) {
+        setAddress(newValue)
+    };
+    function updateCity(newValue) {
+        setCity(newValue)
+    };
+    function updateState(newValue) {
+        setState(newValue)
+    };
+    function updateZip(newValue) {
+        setZip(newValue)
+    };
+    function updateSf(newValue) {
+        setSf(newValue)
+    };
+    function updateUnits(newValue) {
+        setUnits(newValue)
+    };
     function updateRent(newValue) {
         setRent(newValue)
     };
@@ -35,7 +58,13 @@ export function CalcProvider({children}){
     };
 
     return(
-        <CalcContext.Provider value={{
+        <InputContext.Provider value={{
+            address,
+            city,
+            state,
+            zip,
+            sf,
+            units,                  
             rent,
             rentGrowth,
             capex,
@@ -43,6 +72,12 @@ export function CalcProvider({children}){
             period,
             purchasePrice,
             capRate,
+            updateAddress,
+            updateCity,
+            updateState,
+            updateZip,
+            updateSf,
+            updateUnits,
             updateRent,
             updateRentGrowth,
             updateCapex,
@@ -52,6 +87,6 @@ export function CalcProvider({children}){
             udpateCapRate
         }}>
             {children}
-        </CalcContext.Provider>
+        </InputContext.Provider>
     );
 };
