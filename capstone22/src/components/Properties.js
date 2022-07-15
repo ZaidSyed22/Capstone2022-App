@@ -4,10 +4,19 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { MDBContainer } from 'mdbreact'
 import Table from 'react-bootstrap/Table';
+import Chart from './Chart';
 
+import { useContext } from 'react'
+import { OutputContext } from "../context/OutputContext";
 
 export default function Properties() {
 
+  const {
+    propertyIncome,
+    propertyCashFlows,
+    propertyNpv,
+    years,
+  } = useContext(OutputContext);
 
   return (
 
@@ -46,11 +55,14 @@ export default function Properties() {
         <Col>
           <Card className="text-center">
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Net Present Value</Card.Title>
               <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+
+                Based on your assumptions above, below is the profit (or loss) you'd generate
+                from pursuing this deal:
+                <br/><br/>
+                {propertyNpv.toLocaleString('us-US', {style: 'currency', currency: 'USD'})}
+
               </Card.Text>
             </Card.Body>
           </Card>
@@ -59,24 +71,9 @@ export default function Properties() {
         <Col>
           <Card className="text-center">
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Projected Income</Card.Title>
               <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card className="text-center">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                <Chart/>
               </Card.Text>
             </Card.Body>
           </Card>
