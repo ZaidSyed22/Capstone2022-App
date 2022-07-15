@@ -24,7 +24,7 @@
     "db:up": "npx sequelize-cli db:migrate",
     "db:down": "npx sequelize-cli db:drop",
     "db:seed": "npx sequelize-cli db:seed:all",
-    "db:destroy": "dropdb cars_db"
+    "db:destroy": "dropdb"
   },
   "repository": {
     "type": "git",

@@ -19,10 +19,15 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     zip: DataTypes.SRING,
     price: DataTypes.STRING,
-    rentPerSF: DataTypes.STRING,
-    holdingPeriod: DataTypes.INTEGER,
-    SF: DataTypes.INTEGER,
-    units: DataTypes.INTEGER
+    rent: DataTypes.STRING,
+    rentGrowth: DataTypes.STRING,
+    capex: DataTypes.STRING,
+    vacancy: DataTypes.STRING,
+    period: DataTypes.INTEGER,
+    purchasePrice: DataTypes.INTEGER,
+    units: DataTypes.INTEGER,
+    xAxis: DataTypes.INTEGER,
+    yAxis: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Properties',

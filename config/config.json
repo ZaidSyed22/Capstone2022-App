@@ -2,7 +2,7 @@
   "development": {
     "username": "luna",
     "password": null,
-    "database": "postgres",
+    "database": "capstone",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
