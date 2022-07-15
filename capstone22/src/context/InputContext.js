@@ -3,19 +3,20 @@ import { createContext, useState } from "react";
 export const InputContext = createContext();
 
 export function InputProvider({children}){
-    const[address, setAddress] = useState()
-    const[city, setCity] = useState()
-    const[state, setState] = useState()
-    const[zip, setZip] = useState()
-    const[sf, setSf] = useState()
-    const[units, setUnits] = useState()
-    const[rent, setRent] = useState()
+    const [address, setAddress] = useState()
+    const [city, setCity] = useState()
+    const [state, setState] = useState()
+    const [zip, setZip] = useState()
+    const [squareFeet, setSquareFeet] = useState()
+    const [units, setUnits] = useState()
+    const [rentPsf, setRentPsf] = useState()
     const [purchasePrice, setPurchasePrice] = useState();
     const [rentGrowth, setRentGrowth] = useState();
     const [capex, setCapex] = useState();
-    const [vacancy, setVacancy] = useState();
+    const [vacancyRate, setVacancyRate] = useState();
     const [period, setPeriod] = useState();
     const [capRate, setCapRate] = useState();
+    const [costOfCapital, setCostOfCapital] = useState();
 
     function updateAddress(newValue) {
         setAddress(newValue)
@@ -29,14 +30,14 @@ export function InputProvider({children}){
     function updateZip(newValue) {
         setZip(newValue)
     };
-    function updateSf(newValue) {
-        setSf(newValue)
+    function updateSquareFeet(newValue) {
+        setSquareFeet(newValue)
     };
     function updateUnits(newValue) {
         setUnits(newValue)
     };
-    function updateRent(newValue) {
-        setRent(newValue)
+    function updateRentPsf(newValue) {
+        setRentPsf(newValue)
     };
     function updateRentGrowth(newValue) {
         setRentGrowth(newValue)
@@ -44,8 +45,8 @@ export function InputProvider({children}){
     function updateCapex(newValue) {
         setCapex(newValue)
     };
-    function updateVacancy(newValue) {
-        setVacancy(newValue)
+    function updateVacancyRate(newValue) {
+        setVacancyRate(newValue)
     };
     function updatePeriod(newValue) {
         setPeriod(newValue)
@@ -56,6 +57,9 @@ export function InputProvider({children}){
     function udpateCapRate(newValue) {
         setCapRate(newValue)
     };
+    function updateCostOfCapital(newValue) {
+        setCostOfCapital(newValue)
+    };
 
     return(
         <InputContext.Provider value={{
@@ -63,28 +67,30 @@ export function InputProvider({children}){
             city,
             state,
             zip,
-            sf,
+            squareFeet,
             units,                  
-            rent,
+            rentPsf,
             rentGrowth,
             capex,
-            vacancy,
+            vacancyRate,
             period,
             purchasePrice,
             capRate,
+            costOfCapital,
             updateAddress,
             updateCity,
             updateState,
             updateZip,
-            updateSf,
+            updateSquareFeet,
             updateUnits,
-            updateRent,
+            updateRentPsf,
             updateRentGrowth,
             updateCapex,
-            updateVacancy,
+            updateVacancyRate,
             updatePeriod,
             updatePurchasePrice,
-            udpateCapRate
+            udpateCapRate,
+            updateCostOfCapital
         }}>
             {children}
         </InputContext.Provider>
