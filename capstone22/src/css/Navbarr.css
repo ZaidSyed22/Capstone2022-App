@@ -1,0 +1,32 @@
+#navbar{
+    align-items: right;
+    background-color: black;
+    background-image: url('../assets/rentImageOne.jpeg');
+    animation: gradient 40s ease infinite;
+    background-size: 10em;
+    color: white;
+    display: flex;
+    text-shadow: 5px 5px 5px #e16e8c;
+  
+   
+}
+
+#navbar div {
+    font-size: 15px;
+    margin: 40px;
+    background: linear-gradient(-45deg, red, #e1e1e1, #fef68a,#97fff5); 
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    } 
+}
