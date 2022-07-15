@@ -11,8 +11,9 @@ import Pagetemplate from './Pagetemplate';
 import PropertyInput from './PropertyInput';
 import Properties from './Properties';
 import Map from './map/Map';
-import { InputProvider } from '../context/InputContext'
 
+import { InputProvider } from '../context/InputContext'
+import { OutputProvider } from '../context/OutputContext'
 
 function App() {
   return (
@@ -27,14 +28,19 @@ function App() {
       </Route>
 
       <Route path="/PropertyInput.js" exact>  
-      <InputProvider>
-        <PropertyInput />
-      </InputProvider>
+        <InputProvider>
+          <OutputProvider>
+            <PropertyInput />
+            <Properties/>
+          </OutputProvider>
+        </InputProvider>
       </Route>
 
-      <Route path="/Properties.js" exact>  
-      <Properties />
-      </Route>
+      {/* <Route path="/Properties.js" exact>  
+        <OutputProvider>
+          <Properties />
+        </OutputProvider>
+      </Route> */}
 
       <Route path="./map/Map.js" exact>  
       <Map />

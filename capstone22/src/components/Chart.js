@@ -1,22 +1,22 @@
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
-import { ChartContext } from "../context/ChartContext"
+import { OutputContext } from "../context/OutputContext"
 import { useContext } from "react";
 
 export default function Chart() {
   
     const {
-        xAxis,
-        yAxis,
-    } = useContext(ChartContext);
+        propertyIncome,
+        years,
+    } = useContext(OutputContext);
 
     const data = {
-        labels: xAxis,
+        labels: years,
         datasets: [
             {
-                label: 'Property Income',
+                label: 'Operating Income less Capex',
                 backgroundColor: 'rgb(0, 139, 139, 1)',
-                data: yAxis
+                data: propertyIncome
             }
         ]
     };
