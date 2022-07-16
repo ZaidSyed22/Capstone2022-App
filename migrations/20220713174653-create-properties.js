@@ -23,19 +23,43 @@ module.exports = {
       zip: {
         type: Sequelize.STRING
       },
-      price: {
+      squareFeet: {
         type: Sequelize.STRING
-      },
-      rentPerSF: {
-        type: Sequelize.STRING
-      },
-      holdingPeriod: {
-        type: Sequelize.INTEGER
-      },
-      sf: {
-        type: Sequelize.INTEGER
       },
       units: {
+        type: Sequelize.STRING
+      },
+      rentPsf: {
+        type: Sequelize.INTEGER
+      },
+      rentGrowth: {
+        type: Sequelize.INTEGER
+      },
+      capex: {
+        type: Sequelize.INTEGER
+      },
+      period: {
+        type: Sequelize.INTEGER
+      },
+      purchasePrice: {
+        type: Sequelize.INTEGER
+      },
+      capRate: {
+        type: Sequelize.INTEGER
+      },
+      costOfCapital: {
+        type: Sequelize.INTEGER
+      },
+      propertyIncome: {
+        type: Sequelize.INTEGER
+      },
+      propertyCashFlows: {
+        type: Sequelize.INTEGER
+      },
+      propertyNpv: {
+        type: Sequelize.INTEGER
+      },
+      propertyCashFlows: {
         type: Sequelize.INTEGER
       },
       createdAt: {
