@@ -11,6 +11,7 @@ import '../css/PropertyInput.css'
 import CalcCashFlows from './mathFunctions/CalcCashFlows'
 import CalcIncome from './mathFunctions/CalcIncome'
 import CalcNpv from './mathFunctions/CalcNpv'
+import AssumptionsSelector from './AssumptionsSelector'
 
 import { useContext } from "react";
 import { InputContext } from "../context/InputContext";
@@ -20,179 +21,191 @@ export default function PropertyInput() {
 
   const {
     address,
-    city,
-    state,
-    zip,
-    squareFeet,
-    units,                  
-    rentPsf,
-    rentGrowth,
-    capex,
-    vacancyRate,
-    period,
-    purchasePrice,
-    capRate,
-    costOfCapital,
-    updateAddress,
-    updateCity,
-    updateState,
-    updateZip,
-    updateSquareFeet,
-    updateUnits,
-    updateRentPsf,
-    updateRentGrowth,
-    updateCapex,
-    updateVacancyRate,
-    updatePeriod,
-    updatePurchasePrice,
-    udpateCapRate,
-    updateCostOfCapital
+      city,
+      state,
+      zip,
+      squareFeet,
+      units,                  
+      rentPsf,
+      rentGrowth,
+      capex,
+      vacancyRate,
+      period,
+      purchasePrice,
+      capRate,
+      costOfCapital,
+      propertyType,
+      propertyClass,
+      updateAddress,
+      salePrice,
+      updateCity,
+      updateState,
+      updateZip,
+      updateSquareFeet,
+      updateUnits,
+      updateRentPsf,
+      updateRentGrowth,
+      updateCapex,
+      updateVacancyRate,
+      updatePeriod,
+      updatePurchasePrice,
+      updateCapRate,
+      updateCostOfCapital,
+      updatePropertyType,
+      updatePropertyClass,
+      updateSalePrice
   } = useContext(InputContext);
 
   const {
-    propertyIncome,
-    propertyCashFlows,
-    propertyNpv,
-    years,
     updatePropertyIncome,
-    updatePropertyCashFlows,
-    updatePropertyNpv,
-    updateYears
+    updateYears,
+    updatePropertyNpv
   } = useContext(OutputContext);
 
   // when button is clicked, calculate output values and update state
   function handleClick() {
-    let incomeObj = {}
-    incomeObj = CalcIncome(rentPsf * squareFeet, rentGrowth/100, capex, vacancyRate/100, period)
+    // let's set the hidden assumptions
+    let assumptionsObj = AssumptionsSelector(propertyClass)
+
+    // update state variables
+    updateVacancyRate(assumptionsObj.vacancyRate)
+    updateCapex(assumptionsObj.capex)
+    updateCapRate(assumptionsObj.capRate)
+    updateCostOfCapital(assumptionsObj.costOfCapital)
+
+    // calculate income per year
+    let incomeObj = CalcIncome(rentPsf * squareFeet, rentGrowth/100, assumptionsObj.capex, assumptionsObj.vacancyRate, period)
+
+    // store years and income per year in their state variables
     updateYears(incomeObj.yearsArray)
     updatePropertyIncome(incomeObj.incomeArray)
 
-    // default cap rate for now
-    let cashFlows = CalcCashFlows(0.05, incomeObj.incomeArray)
-    updatePropertyCashFlows(cashFlows)
+    //calculate exit/sale price (intermediate step)
+    let exitPrice = incomeObj.incomeArray[incomeObj.incomeArray.length-1] / assumptionsObj.capRate
+    updateSalePrice(exitPrice)
 
-    let npv = CalcNpv(purchasePrice, cashFlows, costOfCapital/100)
+    // create a cashflows array (intermediate step)
+    let cashFlowsArray = [...incomeObj.incomeArray]
+    cashFlowsArray.push(exitPrice)
+
+    // calculate npv
+    let npv = CalcNpv(purchasePrice, cashFlowsArray, assumptionsObj.costOfCapital)
+  
+    // update npv state
     updatePropertyNpv(npv)
   }
 
   return (
     <MDBContainer>
-    <div className="w-responsive text-center mx-auto p-3 mt-2">
-      
-    <Card className="text-center">
-    <Card.Header>Input Deal Terms</Card.Header>
-    <Card.Body>
-    <Form>
+      <div className="w-responsive text-center mx-auto p-3 mt-2">
+        <Card className="text-center">
+          <Card.Header>Input Deal Terms</Card.Header>
+          <Card.Body>
+            <Form>
 
-      <Form.Group className="mb-3" controlId="formGridAddress1">
-        <Form.Label>Address</Form.Label>
-        <Form.Control placeholder="1234 Main St" onChange={(e) => updateAddress(e.target.value)} />
-      </Form.Group>
+              <Row className="mb-3">
+                <Form.Group className="mb-3">
+                  <Form.Label>Address</Form.Label>
+                  <Form.Control placeholder="1234 Main St" onChange={(e) => updateAddress(e.target.value)} />
+                </Form.Group>
+              </Row>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>City</Form.Label>
-          <Form.Control onChange={(e) => updateCity(e.target.value)}/>
-        </Form.Group>
-  
-        <Form.Group as={Col} controlId="formGridState">
-          <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose..." onChange={(e) => updateState(e.target.value)}>
-            <option>Choose...</option>
-            <option>...</option>
-          </Form.Select>
-        </Form.Group>
+              <Row className="mb-3">
+                <Form.Group as={Col}>
+                  <Form.Label>City</Form.Label>
+                  <Form.Control onChange={(e) => updateCity(e.target.value)}/>
+                </Form.Group>
+          
+                <Form.Group as={Col}>
+                  <Form.Label>State</Form.Label>
+                  <Form.Control onChange={(e) => updateState(e.target.value)}>
+                  </Form.Control>
+                </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control onChange={(e) => updateZip(e.target.value)}/>
-        </Form.Group>
-      </Row>
+                <Form.Group as={Col}>
+                  <Form.Label>Zip</Form.Label>
+                  <Form.Control onChange={(e) => updateZip(e.target.value)}/>
+                </Form.Group>
+              </Row>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Purchase Price</Form.Label>
-          <InputGroup className="mb-3">
-            <InputGroup.Text>$</InputGroup.Text>
-            <Form.Control type="number" onChange={(e) => updatePurchasePrice(e.target.valueAsNumber)} aria-label="Dollar amount (with dot and two decimal places)" />
-          </InputGroup>
-        </Form.Group>
+              <Row className="mb-3">
+                <Form.Group as={Col}>
+                  <Form.Label>Rent PSF</Form.Label>
+                  <InputGroup>
+                    <InputGroup.Text>$</InputGroup.Text>
+                    <Form.Control type="number" onChange={(e) => updateRentPsf(e.target.valueAsNumber)} />
+                    <InputGroup.Text>/sf</InputGroup.Text>
+                  </InputGroup>
+                </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Rent</Form.Label>
-          <InputGroup className="mb-3">
-            <InputGroup.Text>$</InputGroup.Text>
-            <Form.Control type="number" onChange={(e) => updateRentPsf(e.target.valueAsNumber)} />
-            <InputGroup.Text>/sf</InputGroup.Text>
-          </InputGroup>
-        </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Square Footage</Form.Label>
+                  <Form.Control type="number" onChange={(e) => updateSquareFeet(e.target.valueAsNumber)} />
+                </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Holding Period</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control type="number" onChange={(e) => updatePeriod(e.target.valueAsNumber)} />
-            <InputGroup.Text>/yrs</InputGroup.Text>
-          </InputGroup>
-        </Form.Group>
-      </Row>
+                <Form.Group as={Col}>
+                  <Form.Label>Number of Units</Form.Label>
+                  <Form.Control type="number" onChange={(e) => updateUnits(e.target.valueAsNumber)} />
+                </Form.Group>
+              </Row>
 
-      <Row className="mb-3">
-      <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Square Footage</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control type="number" onChange={(e) => updateSquareFeet(e.target.valueAsNumber)} aria-label="Sqaure Footage" />
-          </InputGroup>
-        </Form.Group>
+              <Row className="mb-3">
+                <Form.Group as={Col}>
+                  <Form.Label>Purchase Price</Form.Label>
+                  <InputGroup>
+                    <InputGroup.Text>$</InputGroup.Text>
+                    <Form.Control type="number" onChange={(e) => updatePurchasePrice(e.target.valueAsNumber)} />
+                  </InputGroup>
+                </Form.Group>
+                  
+                <Form.Group as={Col}>
+                  <Form.Label>Holding Period</Form.Label>
+                  <InputGroup>
+                    <Form.Control type="number" onChange={(e) => updatePeriod(e.target.valueAsNumber)} />
+                    <InputGroup.Text>/yrs</InputGroup.Text>
+                  </InputGroup>
+                </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Number of Units</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control type="number" onChange={(e) => updateUnits(e.target.valueAsNumber)} aria-label="Sqaure Footage" />
-          </InputGroup>
-        </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Rent Growth</Form.Label>
+                  <InputGroup>
+                    <Form.Control type="number" onChange={(e) => updateRentGrowth(e.target.valueAsNumber)} />
+                    <InputGroup.Text>%</InputGroup.Text>
+                  </InputGroup>
+                </Form.Group>
+              </Row>
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Cost of Capital</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control type="number" onChange={(e) => updateCostOfCapital(e.target.valueAsNumber)} />
-            <InputGroup.Text>%</InputGroup.Text>
-          </InputGroup>
-        </Form.Group>
-      </Row>
+              <Row className="mb-3">
+              <Form.Group as={Col}>
+                <Form.Label>Property Type</Form.Label>
+                <Form.Select defaultValue="Multifamily" onChange={(e) => updatePropertyType(e.target.value)}>
+                  <option>Multifamily</option>
+                  <option>Office</option>
+                  <option>Industrial</option>
+                  <option>Retail</option>
+                  <option>Senior Housing</option>
+                  <option>Hotel</option>
+                </Form.Select>
+              </Form.Group>
 
-      <Row className="mb-3">
-      <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Vacancy Rate</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control type="number" onChange={(e) => updateVacancyRate(e.target.valueAsNumber)} />
-            <InputGroup.Text>%</InputGroup.Text>
-          </InputGroup>
-        </Form.Group>
+              <Form.Group as={Col}>
+                <Form.Label>Property Class</Form.Label>
+                <Form.Select defaultValue="A" onChange={(e) => updatePropertyClass(e.target.value)}>
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </Form.Select>
+              </Form.Group>
+              </Row>
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Annual Capex</Form.Label>
-          <InputGroup className="mb-3">
-            <InputGroup.Text>$</InputGroup.Text>
-            <Form.Control type="number" onChange={(e) => updateCapex(e.target.valueAsNumber)} aria-label="Sqaure Footage" />
-          </InputGroup>
-        </Form.Group>
+              <Button variant="primary" type="button" onClick= { handleClick } >
+                Submit
+              </Button>
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Rent Growth</Form.Label>
-          <InputGroup className="mb-3">
-            <Form.Control type="number" onChange={(e) => updateRentGrowth(e.target.valueAsNumber)} />
-            <InputGroup.Text>%</InputGroup.Text>
-          </InputGroup>
-        </Form.Group>
-      </Row>
-
-      <Button variant="primary" type="button" onClick= { handleClick } >
-        Submit
-      </Button>
-    </Form>
-    </Card.Body>
-    </Card>
-    </div>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
     </MDBContainer>
   )
 }

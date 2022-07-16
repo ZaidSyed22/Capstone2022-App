@@ -1,3 +1,7 @@
+.footer-spacing {
+    padding: 40px
+}
+
 .footer-text{
     color: lightgray;
     font-size: 8.5px;
@@ -24,12 +28,3 @@
             background-position: 0% 50%;
         } 
     }
-    
-    
-    
-    
-    
-    
-       
-    
-    
