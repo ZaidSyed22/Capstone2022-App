@@ -17,6 +17,9 @@ export function InputProvider({children}){
     const [period, setPeriod] = useState();
     const [capRate, setCapRate] = useState();
     const [costOfCapital, setCostOfCapital] = useState();
+    const [propertyType, setPropertyType] = useState();
+    const [propertyClass, setPropertyClass] = useState();
+    const [salePrice, setSalePrice] = useState(0);
 
     function updateAddress(newValue) {
         setAddress(newValue)
@@ -54,11 +57,20 @@ export function InputProvider({children}){
     function updatePurchasePrice(newValue) {
         setPurchasePrice(newValue)
     };
-    function udpateCapRate(newValue) {
+    function updateCapRate(newValue) {
         setCapRate(newValue)
     };
     function updateCostOfCapital(newValue) {
         setCostOfCapital(newValue)
+    };
+    function updatePropertyType(newValue) {
+        setPropertyType(newValue)
+    };
+    function updatePropertyClass(newValue) {
+        setPropertyClass(newValue)
+    };
+    function updateSalePrice(newValue) {
+        setSalePrice(newValue)
     };
 
     return(
@@ -77,6 +89,9 @@ export function InputProvider({children}){
             purchasePrice,
             capRate,
             costOfCapital,
+            propertyType,
+            propertyClass,
+            salePrice,
             updateAddress,
             updateCity,
             updateState,
@@ -89,8 +104,11 @@ export function InputProvider({children}){
             updateVacancyRate,
             updatePeriod,
             updatePurchasePrice,
-            udpateCapRate,
-            updateCostOfCapital
+            updateCapRate,
+            updateCostOfCapital,
+            updatePropertyType,
+            updatePropertyClass,
+            updateSalePrice
         }}>
             {children}
         </InputContext.Provider>

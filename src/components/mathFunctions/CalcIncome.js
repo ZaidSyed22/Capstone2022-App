@@ -4,7 +4,7 @@
 import { round } from 'mathjs'
 
 export default function CalcIncome(rentalIncome, rentGrowth, capex, vacancyRate, period) {
-    let netIncome = (rentalIncome * (1-vacancyRate)) - capex
+    let netIncome = rentalIncome * (1-capex) * (1-vacancyRate) 
 
     let yearsArray = [1]
     let incomeArray = [netIncome]
