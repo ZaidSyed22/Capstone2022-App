@@ -18,8 +18,8 @@ export function InputProvider({children}){
     const [period, setPeriod] = useState();
     const [capRate, setCapRate] = useState();
     const [costOfCapital, setCostOfCapital] = useState();
-    const [propertyType, setPropertyType] = useState();
-    const [propertyClass, setPropertyClass] = useState();
+    const [propertyType, setPropertyType] = useState('Multifamily');
+    const [propertyClass, setPropertyClass] = useState('A');
     const [salePrice, setSalePrice] = useState(0);
 
 
