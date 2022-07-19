@@ -1,0 +1,3 @@
+{"level":"info","message":{"Action":"POST","Body":{"address":"1270 Broadway","city":"New York","period":"10","propertyClass":"A","propertyType":"Office","purchasePrice":"12000000","rentGrowth":"3","rentPsf":"125","squareFeet":"30000","state":"NY","units":"50","username":"smoon","zip":"10001"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/18/2022, 11:45:52 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/18/2022, 12:04:17 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/18/2022, 12:04:29 pm"},"service":"capstone22"}
