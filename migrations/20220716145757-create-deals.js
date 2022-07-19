@@ -35,29 +35,17 @@ module.exports = {
       rentGrowth: {
         type: Sequelize.INTEGER
       },
-      capex: {
-        type: Sequelize.INTEGER
-      },
       period: {
         type: Sequelize.INTEGER
       },
       purchasePrice: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
-      capRate: {
-        type: Sequelize.INTEGER
+      propertyType: {
+        type: Sequelize.STRING
       },
-      costOfCapital: {
-        type: Sequelize.INTEGER
-      },
-      propertyIncome: {
-        type: Sequelize.INTEGER
-      },
-      propertyCashFlows: {
-        type: Sequelize.INTEGER
-      },
-      propertyNpv: {
-        type: Sequelize.INTEGER
+      propertyClass: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

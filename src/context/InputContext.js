@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 export const InputContext = createContext();
 
 export function InputProvider({children}){
+    const [username,setUsername] = useState('capstone22')
     const [address, setAddress] = useState()
     const [city, setCity] = useState()
     const [state, setState] = useState()
@@ -21,6 +22,10 @@ export function InputProvider({children}){
     const [propertyClass, setPropertyClass] = useState();
     const [salePrice, setSalePrice] = useState(0);
 
+
+    function updateUsername(newValue) {
+        setUsername(newValue)
+    };
     function updateAddress(newValue) {
         setAddress(newValue)
     };
@@ -75,6 +80,7 @@ export function InputProvider({children}){
 
     return(
         <InputContext.Provider value={{
+            username,
             address,
             city,
             state,
@@ -92,6 +98,7 @@ export function InputProvider({children}){
             propertyType,
             propertyClass,
             salePrice,
+            updateUsername,
             updateAddress,
             updateCity,
             updateState,
