@@ -6,21 +6,21 @@ function Home() {
   return (
     <div className= 'Home'> 
         <form>       
-            <h1 class="text-small">
-            Welcome to Our Capstone 2022
+            <h1 class="text-large">
+            Welcome to $Profit Rain$
             </h1>   
-            <h4><b>Our Purpose:</b></h4>
-            <p>
+            <h4 class="text-medium"><b>Our Purpose:</b></h4>
+            <p class="text-small">
               .........................................
             </p>
             <b>
             </b>
-            <p>          
+            <p class="text-small">          
               .................................
             </p>
             <b>
             </b>
-            <p>          
+            <p class="text-small">          
             ........................
             </p>
         </form>

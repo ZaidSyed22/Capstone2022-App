@@ -34,11 +34,11 @@ function Footer() {
             </p>
       </Container>
       <Container fluid>
-            <p className='footer-text'><b>© 2022 Copyright</b></p>
+            <p className='footer-text'><b>© 2022 Copyright. All Rights Reserved.</b></p>
       </Container>
     </NB>
     </div>
   )
 }
 
-export default Footer; 
+export default Footer;
