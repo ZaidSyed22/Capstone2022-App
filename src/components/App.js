@@ -14,6 +14,7 @@ import Map from './map/Map';
 
 import { InputProvider } from '../context/InputContext'
 import { OutputProvider } from '../context/OutputContext'
+import Login from './Login';
 
 function App() {
   return (
@@ -45,6 +46,10 @@ function App() {
 
       <Route path="./map/Map.js" exact>  
         <Map />
+      </Route>
+
+      <Route path="./Login.js" exact>  
+      <Login />
       </Route>
     
       

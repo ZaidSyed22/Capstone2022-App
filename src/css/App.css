@@ -1,6 +1,8 @@
 .App {
   text-align:center;
  
+  background-size: fit;
+ 
 }
 
 .App-logo {
