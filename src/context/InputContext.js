@@ -21,6 +21,7 @@ export function InputProvider({children}){
     const [propertyType, setPropertyType] = useState('Multifamily');
     const [propertyClass, setPropertyClass] = useState('A');
     const [salePrice, setSalePrice] = useState(0);
+    const [coordinates, setCoordinates] = useState([0,0])
 
 
     function updateUsername(newValue) {

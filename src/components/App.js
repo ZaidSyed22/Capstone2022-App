@@ -31,6 +31,7 @@ function App() {
         <InputProvider>
           <OutputProvider>
             <PropertyInput />
+            <Map/>
             <Properties/>
           </OutputProvider>
         </InputProvider>
@@ -43,7 +44,7 @@ function App() {
       </Route> */}
 
       <Route path="./map/Map.js" exact>  
-      <Map />
+        <Map />
       </Route>
     
       

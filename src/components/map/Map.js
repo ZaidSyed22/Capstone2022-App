@@ -6,30 +6,23 @@ import { MDBContainer } from 'mdbreact'
 import '../../css/Map.css'
 
 export default function Map() {
-    const center=[51.505, -0.09];
+  const position = [0, 0] // need to store as state
 
   return (
-
-    <MDBContainer>
-        <div className="w-75 p-3" id='map'>
-
-            <MapContainer center={center} zoom={15}>
-            <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={center} icon={defaultMarker}>
-            <Popup className="request-popup">
-                <div style={popupContent}>
-                <span style={popupText}>
-                nothing yet
-                </span>
-                </div>
-            </Popup>
-            </Marker>
-        </MapContainer>
-
-        </div>
-    </MDBContainer>
+    
+    <div class='leaflet-container'>
+      <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
+  
   )
 }
