@@ -65,13 +65,12 @@ export default function SaveButton() {
         years: years
       }).then(() => {
         setDirect(true)
-        console.log("SAVED")
         alert("Calculation saved!")
       })
     } 
 
-    // if (direct) {
-    //   return <Redirect to='/deals'/>;}
+    if (direct) {
+      return <Redirect to='/deals'/>;}
 
   return (
     
