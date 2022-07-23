@@ -41,6 +41,7 @@ export default function PropertyInput() {
       propertyClass,
       updateAddress,
       salePrice,
+      coordinates,
       updateCity,
       updateState,
       updateZip,
@@ -56,7 +57,8 @@ export default function PropertyInput() {
       updateCostOfCapital,
       updatePropertyType,
       updatePropertyClass,
-      updateSalePrice
+      updateSalePrice,
+      updateCoordinates
   } = useContext(InputContext);
 
   const {
@@ -69,37 +71,57 @@ export default function PropertyInput() {
     updatePropertyNpv
   } = useContext(OutputContext);
 
-  // when button is clicked, calculate output values and update state
+  // calculate property stats and get map coordinates
   function handleClick() {
-    // let's set the hidden assumptions
-    let assumptionsObj = AssumptionsSelector(propertyClass)
-
-    // update state variables
-    updateVacancyRate(assumptionsObj.vacancyRate)
-    updateCapex(assumptionsObj.capex)
-    updateCapRate(assumptionsObj.capRate)
-    updateCostOfCapital(assumptionsObj.costOfCapital)
-
-    // calculate income per year
-    let incomeObj = CalcIncome(rentPsf * squareFeet, rentGrowth/100, assumptionsObj.capex, assumptionsObj.vacancyRate, period)
-
-    // store years and income per year in their state variables
-    updateYears(incomeObj.yearsArray)
-    updatePropertyIncome(incomeObj.incomeArray)
-
-    //calculate exit/sale price (intermediate step)
-    let exitPrice = incomeObj.incomeArray[incomeObj.incomeArray.length-1] / assumptionsObj.capRate
-    updateSalePrice(exitPrice)
-
-    // create a cashflows array (intermediate step)
-    let cashFlowsArray = [...incomeObj.incomeArray]
-    cashFlowsArray.push(exitPrice)
-
-    // calculate npv
-    let npv = CalcNpv(purchasePrice, cashFlowsArray, assumptionsObj.costOfCapital)
+    getStats()
+    getCoordinates()
+  }
   
-    // update npv state
-    updatePropertyNpv(npv)
+  // function to calculate output values and update state
+  function getStats() {
+        // let's set the hidden assumptions
+        let assumptionsObj = AssumptionsSelector(propertyClass)
+
+        // update state variables
+        updateVacancyRate(assumptionsObj.vacancyRate)
+        updateCapex(assumptionsObj.capex)
+        updateCapRate(assumptionsObj.capRate)
+        updateCostOfCapital(assumptionsObj.costOfCapital)
+    
+        // calculate income per year
+        let incomeObj = CalcIncome(rentPsf * squareFeet, rentGrowth/100, assumptionsObj.capex, assumptionsObj.vacancyRate, period)
+    
+        // store years and income per year in their state variables
+        updateYears(incomeObj.yearsArray)
+        updatePropertyIncome(incomeObj.incomeArray)
+    
+        //calculate exit/sale price (intermediate step)
+        let exitPrice = incomeObj.incomeArray[incomeObj.incomeArray.length-1] / assumptionsObj.capRate
+        updateSalePrice(exitPrice)
+    
+        // create a cashflows array (intermediate step)
+        let cashFlowsArray = [...incomeObj.incomeArray]
+        cashFlowsArray.push(exitPrice)
+    
+        // calculate npv
+        let npv = CalcNpv(purchasePrice, cashFlowsArray, assumptionsObj.costOfCapital)
+      
+        // update npv state
+        updatePropertyNpv(npv)
+  }
+
+  // function to get map coordinates
+  const getCoordinates = async () => {
+    const apiKey = 'ApUNqkR4MBIk5R_2rS5orpBQ9BItaMVcCmyAa9agXz5LwQK4_nyXHJDT3C3JHLmL'
+    const newAddress = address.split(' ').join('%20')
+    const url = `http://dev.virtualearth.net/REST/v1/Locations?locality=${city}&adminDistrict=${state}&postalCode=${zip}&addressLine=${newAddress}&key=${apiKey}`
+    
+    await fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      updateCoordinates(data.resourceSets[0].resources[0].point.coordinates)
+    })
+
   }
 
 
