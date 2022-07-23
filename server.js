@@ -68,6 +68,15 @@ app.post('/saveDeal', async function (req, res) {
             rentGrowth: req.body.rentGrowth,
             propertyType: req.body.propertyType,
             propertyClass: req.body.propertyClass,
+            capex: req.body.capex,
+            vacancyRate: req.body.vacancyRate,
+            capRate: req.body.capRate,
+            costOfCapital: req.body.costOfCapital,
+            salePrice: req.body.salePrice,
+            propertyIncome: req.body.propertyIncome,
+            propertyCashFlows: req.body.propertyCashFlows,
+            propertyNpv: req.body.propertyNpv,
+            years: req.body.years
          }
     ) 
 
