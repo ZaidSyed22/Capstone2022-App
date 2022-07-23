@@ -12,6 +12,7 @@ import { InputProvider } from '../context/InputContext'
 import { OutputProvider } from '../context/OutputContext'
 import Login from './Login';
 import SaveButton from './databaseDisplay/SaveButton';
+import SavedDeal from "./databaseDisplay/SavedDeal";
 
 function App() {
   return (
@@ -34,14 +35,13 @@ function App() {
               </InputProvider>
             </Route>
 
-            {/* <Route path="/Properties.js" exact>  
-        <OutputProvider>
-          <Properties />
-        </OutputProvider>
-      </Route> */}
 
-            <Route path="./map/Map.js" exact>
-              <Map />
+            <Route path="/deals" exact>
+              <InputProvider>
+                  <OutputProvider>
+                    <SavedDeal />
+                  </OutputProvider>
+                </InputProvider>
             </Route>
 
             <Route path="./Login.js" exact>

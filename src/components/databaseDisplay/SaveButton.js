@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useContext } from "react";
 import { InputContext } from "../../context/InputContext";
 import { OutputContext } from "../../context/OutputContext";
 import Button from 'react-bootstrap/Button'
+import { Redirect } from 'react-router-dom';
 
 const axios = require('axios').default;
 
 export default function SaveButton() {
+  const[direct,setDirect] = useState(false)
 
     const {
         username,
@@ -62,15 +64,20 @@ export default function SaveButton() {
         propertyNpv: propertyNpv,
         years: years
       }).then(() => {
+        setDirect(true)
         console.log("SAVED")
         alert("Calculation saved!")
       })
     } 
+
+    // if (direct) {
+    //   return <Redirect to='/deals'/>;}
 
   return (
     
     <Button variant="secondary" type="button" onClick= { handleSave } >
     Save
    </Button>
+
   )
 }
