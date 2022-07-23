@@ -8,9 +8,11 @@ import PropertyInput from "./PropertyInput";
 import Properties from "./Properties";
 import Map from "./map/Map";
 
-import { InputProvider } from "../context/InputContext";
-import { OutputProvider } from "../context/OutputContext";
-import Login from "./Login";
+import { InputProvider } from '../context/InputContext'
+import { OutputProvider } from '../context/OutputContext'
+import Login from './Login';
+import SaveButton from './databaseDisplay/SaveButton';
+import SavedDeal from "./databaseDisplay/SavedDeal";
 
 function App() {
   return (
@@ -28,18 +30,18 @@ function App() {
                   <PropertyInput />
                   <Map />
                   <Properties />
+                  <SaveButton />
                 </OutputProvider>
               </InputProvider>
             </Route>
 
-            {/* <Route path="/Properties.js" exact>  
-        <OutputProvider>
-          <Properties />
-        </OutputProvider>
-      </Route> */}
 
-            <Route path="./map/Map.js" exact>
-              <Map />
+            <Route path="/deals" exact>
+              <InputProvider>
+                  <OutputProvider>
+                    <SavedDeal />
+                  </OutputProvider>
+                </InputProvider>
             </Route>
 
             <Route path="./Login.js" exact>

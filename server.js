@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const winston = require('winston');
 const moment = require('moment');
 const pg = require('pg-promise')();
+const debug = require("debug")("server");
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -254,7 +255,4 @@ app.get('/allDeals', async (req, res) => {
 //     }
 // });
 
-app.listen(2022, async ()=> {
-    console.log('Server is running on port 2022')
-
-})
+app.listen(2022, async ()=> debug('now running on port ${port}'))

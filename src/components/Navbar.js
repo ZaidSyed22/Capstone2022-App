@@ -16,7 +16,7 @@ function Navbar() {
     <div><NavLink to= "/">Home</NavLink></div>  
     <div><NavLink to= "/PropertyInput.js">Property Input</NavLink></div>
     {/* <div><NavLink to= "/Properties.js">Properties</NavLink></div> */}
-    <div><NavLink to= "./map/Map.js">Map</NavLink></div>
+    <div><NavLink to= "/deals">Deals</NavLink></div>
     <div><NavLink to= "./Login.js">Login</NavLink></div>
 </div>
 )

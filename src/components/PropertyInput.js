@@ -17,7 +17,6 @@ import { useContext } from "react";
 import { InputContext } from "../context/InputContext";
 import { OutputContext } from "../context/OutputContext";
 
-import { Axios } from 'axios'
 import { add } from 'mathjs'
 
 export default function PropertyInput() {
@@ -63,6 +62,10 @@ export default function PropertyInput() {
   } = useContext(InputContext);
 
   const {
+    propertyIncome,
+    propertyCashFlows,
+    propertyNpv,
+    years,
     updatePropertyIncome,
     updateYears,
     updatePropertyNpv
@@ -105,6 +108,27 @@ export default function PropertyInput() {
       
         // update npv state
         updatePropertyNpv(npv)
+
+        console.log(
+          units,                  
+          rentPsf,
+          rentGrowth,
+          capex,
+          vacancyRate,
+          period,
+          purchasePrice,
+          capRate,
+          costOfCapital,
+          propertyType,
+          propertyClass,
+          updateAddress,
+          salePrice,
+          coordinates,
+          propertyIncome,
+          propertyCashFlows,
+          propertyNpv,
+          years,
+        )
   }
 
   // function to get map coordinates
@@ -120,28 +144,6 @@ export default function PropertyInput() {
     })
 
   }
-
-
-  // saving to the databse
-  function handleSave (){
-    Axios.post("http://localhost:2022/saveDeal", {
-      username: username,
-      address: address,
-      city: city,
-      state: state,
-      zip: zip,
-      purchasePrice: purchasePrice,
-      rentPsf: rentPsf,
-      period: period,
-      squareFeet: squareFeet,
-      units: units,
-      rentGrowth: rentGrowth,
-      propertyType: propertyType,
-      propertyClass: propertyClass,
-    }).then(() => {
-      alert("Calculation saved!")
-    })
-  } 
 
 
   return (
@@ -249,10 +251,6 @@ export default function PropertyInput() {
 
               <Button variant="primary" type="button" onClick= { handleClick } >
                 Submit
-              </Button>
-
-              <Button variant="secondary" type="button" onClick= { handleSave } >
-                Save
               </Button>
 
             </Form>

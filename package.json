@@ -14,7 +14,6 @@
     "mathjs": "^10.6.4",
     "mdbreact": "^5.2.0",
     "method-override": "^3.0.0",
-    "nodemon": "^2.0.19",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "pg-promise": "^10.11.1",
@@ -58,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "nodemon": "^2.0.19",
     "sequelize-cli": "^6.4.1"
   }
 }
