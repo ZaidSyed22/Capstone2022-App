@@ -3,32 +3,35 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
-import Chart from '../Chart';
+import { MDBContainer } from 'mdbreact'
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS } from 'chart.js/auto';
 
 const axios = require('axios').default;
 
 export default function SavedDeal() {
   const [building, setBuilding] = useState([])
-  console.log('component')
+  const [dataset, setDataset] = useState({})
+  const [user] = useState('')
+
+
 
   useEffect(() => {
-    console.log('effect')
     axios.get(`http://localhost:2022/deals`)
     .then((res) =>  {
       setBuilding(res.data)
     })
-    console.log('effect done')
   },[])
   
-
 
   return (
     <div>
 
-        {building.map((property) => {
-          console.log(property)
+        {building.map((property, i) => {
           return (
-          <Row xs={1} md={2} className="g-4">
+            <MDBContainer>
+            <div className="w-responsive text-center mx-auto p-3 mt-2"> 
+          <Row xs={1} md={2} className="g-4" is>
           <Col>
             <Card className="text-center">
               <Card.Body>
@@ -60,7 +63,23 @@ export default function SavedDeal() {
               <Card.Body>
                 <Card.Title>Projected Income</Card.Title>
                 <Card.Text>
-                  <Chart/>
+                <div>
+                  <br/>
+                    <div className='chart'>
+                      <Bar
+                      data={{
+                        labels: building[i].years,
+                        datasets: [
+                            {
+                                label: 'Operating Income less Capex',
+                                backgroundColor: 'rgb(0, 139, 139, 1)',
+                                data: building[i].propertyIncome
+                            }
+                        ]
+                    }}
+                      />
+                    </div>
+                </div>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -99,7 +118,8 @@ export default function SavedDeal() {
     
         </Row>
     
-    
+        </div>
+    </MDBContainer>
     
     
         )})}

@@ -4363,3 +4363,37 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:17:03 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:17:03 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:17:04 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:31:42 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:31:42 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:34:21 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:56:42 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:56:54 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 12:56:54 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:08:30 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:08:30 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:09:33 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:09:33 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:10:18 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:10:32 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:10:53 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:11:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:11:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:12:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:12:31 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:12:54 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:12:54 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:13:55 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:14:00 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:15:53 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:15:53 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:22:18 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:22:18 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:22:25 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/23/2022, 1:37:45 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"51 Bracken Hill Road","capRate":0.04,"capex":0.05,"city":"Hamburg","costOfCapital":0.06,"period":15,"propertyClass":"A","propertyIncome":[1203213,1227277.26,1251822.81,1276859.26,1302396.45,1328444.38,1355013.26,1382113.53,1409755.8,1437950.91,1466709.93,1496044.13,1525965.01,1556484.31,1587614],"propertyNpv":55896403.87,"propertyType":"Multifamily","purchasePrice":5000000,"rentGrowth":2,"rentPsf":400,"salePrice":39690350,"squareFeet":3333,"state":"NJ","units":4,"username":"capstone22","vacancyRate":0.05,"years":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"zip":"07419"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/23/2022, 1:37:45 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:37:50 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:37:50 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/23/2022, 1:39:01 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"51 Bracken Hill Road","capRate":0.04,"capex":0.05,"city":"Hamburg","costOfCapital":0.06,"period":12,"propertyClass":"A","propertyIncome":[1231454030,1256083110.6,1281204772.81,1306828868.27,1332965445.63,1359624754.55,1386817249.64,1414553594.63,1442844666.52,1471701559.85,1501135591.05,1531158302.87],"propertyNpv":53975597566.13,"propertyType":"Multifamily","purchasePrice":1231241234,"rentGrowth":2,"rentPsf":4000,"salePrice":38278957571.75,"squareFeet":341123,"state":"NJ","units":1,"username":"capstone22","vacancyRate":0.05,"years":[1,2,3,4,5,6,7,8,9,10,11,12],"zip":"07419"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/23/2022, 1:39:01 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:39:03 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 1:39:03 pm"},"service":"capstone22"}
