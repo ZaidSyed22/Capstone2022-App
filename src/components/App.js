@@ -13,6 +13,7 @@ import { OutputProvider } from '../context/OutputContext'
 import Login from './Login';
 import SaveButton from './databaseDisplay/SaveButton';
 import SavedDeal from "./databaseDisplay/SavedDeal";
+import Signup from './Signup';
 
 function App() {
   return (
@@ -34,8 +35,6 @@ function App() {
                 </OutputProvider>
               </InputProvider>
             </Route>
-
-
             <Route path="/deals" exact>
               <InputProvider>
                   <OutputProvider>
@@ -44,12 +43,26 @@ function App() {
                 </InputProvider>
             </Route>
 
-            <Route path="./Login.js" exact>
-              <Login />
-            </Route>
-          </Switch>
-        </Pagetemplate>
-      </Router>
+      {/* <Route path="/Properties.js" exact>  
+        <OutputProvider>
+          <Properties />
+        </OutputProvider>
+      </Route> */}
+
+      <Route path="./map/Map.js" exact>  
+      <Map />
+      </Route>
+
+      <Route path="/login" exact>  
+      <Login />
+      </Route>
+
+      <Route path="/signup" exact>  
+      <Signup />
+      </Route>
+  </Switch>
+</Pagetemplate>
+</Router>
     </div>
   );
 }

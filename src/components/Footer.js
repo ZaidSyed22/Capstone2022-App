@@ -34,7 +34,7 @@ function Footer() {
             </p>
       </Container>
       <Container fluid>
-            <p className='footer-text'><b>© 2022 Copyright. All Rights Reserved.</b></p>
+            <p className='footer-text'><b>Copyright © 2022. All Rights Reserved.</b></p>
       </Container>
     </NB>
     </div>

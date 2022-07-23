@@ -30,7 +30,7 @@ function Login () {
             </button>
           </div>
           <p className="forgot-password text-right mt-2">
-            New Member <a href="./Signup.js">Register</a>
+            New Member <a href="/signup">Register</a>
           </p>
         </div>
       </form>
