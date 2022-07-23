@@ -1,4 +1,7 @@
-.leaflet-container { 
+.leaflet-container {
+    display: flex;
+    justify-items: center;
     width: 100%;
     height: 180px;
+    
 }

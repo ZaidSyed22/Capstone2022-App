@@ -78,6 +78,9 @@ export function InputProvider({children}){
     function updateSalePrice(newValue) {
         setSalePrice(newValue)
     };
+    function updateCoordinates(newValue) {
+        setCoordinates(newValue)
+    }
 
     return(
         <InputContext.Provider value={{
@@ -99,6 +102,7 @@ export function InputProvider({children}){
             propertyType,
             propertyClass,
             salePrice,
+            coordinates,
             updateUsername,
             updateAddress,
             updateCity,
@@ -116,7 +120,8 @@ export function InputProvider({children}){
             updateCostOfCapital,
             updatePropertyType,
             updatePropertyClass,
-            updateSalePrice
+            updateSalePrice,
+            updateCoordinates
         }}>
             {children}
         </InputContext.Provider>
