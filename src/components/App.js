@@ -15,6 +15,7 @@ import Map from './map/Map';
 import { InputProvider } from '../context/InputContext'
 import { OutputProvider } from '../context/OutputContext'
 import Login from './Login';
+import SaveButton from './databaseDisplay/SaveButton';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <OutputProvider>
             <PropertyInput />
             <Properties/>
+            <SaveButton />
           </OutputProvider>
         </InputProvider>
       </Route>

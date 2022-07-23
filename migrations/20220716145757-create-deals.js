@@ -39,13 +39,37 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       purchasePrice: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       propertyType: {
         type: Sequelize.STRING
       },
       propertyClass: {
         type: Sequelize.STRING
+      },
+      capex: {
+        type: Sequelize.DECIMAL
+      },
+      vacancyRate: {
+        type: Sequelize.DECIMAL
+      },
+      capRate: {
+        type: Sequelize.DECIMAL
+      },
+      costOfCapital: {
+        type: Sequelize.DECIMAL
+      },
+      salePrice: {
+        type: Sequelize.DECIMAL
+      },
+      propertyIncome: {
+        type: Sequelize.ARRAY(Sequelize.DECIMAL)
+      }, 
+      propertyNpv: {
+        type: Sequelize.DECIMAL
+      },
+      years: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
       createdAt: {
         allowNull: false,

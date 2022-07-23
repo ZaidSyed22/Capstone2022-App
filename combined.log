@@ -1,3 +1,21 @@
 {"level":"info","message":{"Action":"POST","Body":{"address":"1270 Broadway","city":"New York","period":"10","propertyClass":"A","propertyType":"Office","purchasePrice":"12000000","rentGrowth":"3","rentPsf":"125","squareFeet":"30000","state":"NY","units":"50","username":"smoon","zip":"10001"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/18/2022, 11:45:52 am"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/18/2022, 12:04:17 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/18/2022, 12:04:29 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/21/2022, 7:00:07 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/21/2022, 7:00:21 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"1270 Broadway","city":"New York","period":"10","propertyClass":"A","propertyType":"Office","purchasePrice":"12000000","rentGrowth":"3","rentPsf":"125","squareFeet":"30000","state":"NY","units":"50","username":"smoon","zip":"10001"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/21/2022, 7:00:29 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/21/2022, 7:00:36 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"1270 Broadway","city":"New York","period":"10","propertyClass":"A","propertyType":"Office","purchasePrice":"12000000","rentGrowth":"3","rentPsf":"125","squareFeet":"30000","state":"NY","units":"50","username":"smoon","zip":"10001"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/21/2022, 7:17:02 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/21/2022, 7:17:08 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/21/2022, 7:24:41 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/21/2022, 7:24:55 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/21/2022, 7:25:40 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/21/2022, 7:25:46 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/21/2022, 7:28:30 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"800 Palisade Road","city":"Fort Lee","period":10,"propertyClass":"B","purchasePrice":500000,"rentGrowth":2,"rentPsf":15,"squareFeet":3000,"state":"NJ","units":1,"username":"capstone22","zip":"07024"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/21/2022, 7:28:30 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/21/2022, 7:28:43 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/21/2022, 8:36:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"51 Bracken Hill Road","city":"Hamburg","period":10,"propertyClass":"B","propertyType":"Multifamily","purchasePrice":600000,"rentGrowth":4,"rentPsf":30,"squareFeet":5000,"state":"NJ","units":3,"username":"capstone22","zip":"07419"},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/21/2022, 8:36:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/22/2022, 9:08:24 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/22/2022, 9:11:28 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/23/2022, 10:21:13 am"},"service":"capstone22"}
