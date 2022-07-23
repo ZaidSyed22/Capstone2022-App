@@ -7,7 +7,14 @@ const methodOverride = require('method-override');
 const winston = require('winston');
 const moment = require('moment');
 const pg = require('pg-promise')();
+<<<<<<< HEAD
 const debug = require("debug")("server");
+=======
+const router = express.Router();
+const {User} = require('./models')
+
+const saltRounds = bcrypt.genSaltSync(10)
+>>>>>>> 4c23a9c (sign up, login,)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -158,11 +165,11 @@ app.put('/savedDeals/:id', async (req, res) => {
 
 //-----------CALLS FOR ADMINS-------------------------------------
 
-//view all users
+// view all users
 app.get('/users', async (req, res) => {
-    let userInfos = await user.findAll();
+    let userInfo = await User.findAll();
 
-   res.send(userInfos);
+   res.send(userInfo);
 })
 
 //view all deals
@@ -175,84 +182,75 @@ app.get('/allDeals', async (req, res) => {
 
 //-----------LOGIN-------------------------------------
 
-// login authentication
-// app.post('/login', async function (req, res) {
-//     // first check if all fields are entered
-//     if (req.body.email == "" || req.body.password == "") {
-//         res.status(400).send('error: please fill in all fields')
-//     } else {
-//         // if so, look up the user by email
-//         let user = await user.findOne({
-//             where: {
-//                 email: req.body.email
-//             }
-//         })
-//         // check if user exists
-//         if(user == null) {
-//             res.status(404).send('error: email not found')
-//         } else {
-//             // if user exists, validate password
-//             let isValid = await bcrypt.compare(req.body.password, user.password)
-//             if(isValid) {
-//                 // if password successful, redirect to garage
-//                 let userGarage = await user.findAll({
-//                     where: {
-//                         id: user.id
-//                     }
-//                 })
-            
-//                 let car = await list_of_evs.findAll({
-//                     where: {
-//                         year: userGarage[0].year,
-//                         model: userGarage[0].model,
-//                     }
-//                 })
-            
-//                 let comparables = await user_car_info.findAll({
-//                     where: {
-//                         model: userGarage[0].model
-//                     }
-//                 })
-            
-//                  // list all the properties you care about
-//                 properties = ['year', 'mileage', 'range_mi', 'range_km', 'kWh_100mi', 'kWh_100km']
-             
-//                 // create a parsing function
-//                 let parser = (array, stat) => {
-//                     return array.map(x => x[stat])
-//                 }
-//                 // create an averaging function
-//                 let average = (array) => {
-//                     let avg = array.reduce((a, b) => a + b)/array.length
-//                     return math.round(avg)
-//                 }
-            
-//                 // calculate a bunch of averages and store the results
-//                 let averages = {}
-            
-//                 for(i=0; i < properties.length; i++) {
-//                     // parse the metric you care about
-//                     let parsedArray = parser(comparables, properties[i])
-//                     // calc the average
-//                     let avg = average(parsedArray)
-//                     // store the avg to an obj
-//                     averages[properties[i]] = avg
-//                 }
-             
-//                 averages.sampleSize = comparables.length
-            
-//                 res.render('garage', {
-//                     locals: {
-//                         userGarage,
-//                         car,
-//                         averages
-//                     }
-//                 })
-//             } else {
-//                 res.status(401).send('invalid password')
-//             }
-//         }
-//     }
-// });
+
+app.post("/register", async (req, res) => {
+    let {firstName, lastName, email, username, password} = req.body
+    let hash = bcrypt.hashSync(password, saltRounds)
+    let user = await User.create({
+
+        firstName, 
+        lastName,
+        email,
+        username,
+        password:hash,
+    })
+    console.log("User Created",user)
+    res.json({
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        username: user.username,
+        password: user.password
+    })
+})
+
+app.post("/login", async (req, res) => {
+    let {email, password} = req.body
+    let user = await User.findOne({
+        where: {
+            email
+        }
+    })
+    if(User){
+        let comparePass = bcrypt.compareSync(password, user.password)
+        if(comparePass === true){
+            console.log("loggedIn User", User)
+            res.json({
+                id: user.id,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                username: user.username,
+                password: user.password
+            })
+        } else {
+            res.send("oops!, Incorrect Info")
+        }
+    } else{
+        res.send("oops!, User Not Found")
+    } 
+})
+
+//route to link Signup page
+app.get('/register', (req, res) => {
+   
+    res.render('register', {
+        locals: {
+           
+            }
+        });
+    })
+
+//route to link  Login page     
+app.get('/login', (req, res) => {
+   
+        res.render('login', {
+            locals: {
+                
+                }
+            });
+        })
+
 
 app.listen(2022, async ()=> debug('now running on port ${port}'))

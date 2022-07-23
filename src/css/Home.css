@@ -13,26 +13,34 @@
 }
 
 .text-large { 
-    font-size: 55px;
-    background-color: #fef68a;
+    font-size: 40px;
+    background-color: lightgray;
     margin: 50px;
-    background: linear-gradient(-45deg, red, #e1e1e1, #fef68a,#97fff5); 
-    background-size: 400% 400%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
   
 }
 
 .text-medium{
-    font-size: 30px;
-    background-color: #fef68a;
+    font-size: 20px;
+    background-color: lightgray;
     margin: 100px;
-    background: linear-gradient(-45deg, red, #e1e1e1, #fef68a,#97fff5); 
-    background-size: 400% 400%;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+  
 }
 
 .text-small { 
     font-size: 20px;
-    background-color: #fef68a;
     margin: 10px;
-    background: linear-gradient(-45deg, red, #e1e1e1, #fef68a,#97fff5); 
-    background-size: 400% 400%;
+    background: lightgray;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+ 
 }
