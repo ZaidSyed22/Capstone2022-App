@@ -35,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     propertyIncome: DataTypes.ARRAY(DataTypes.DECIMAL),
     propertyNpv: DataTypes.DECIMAL,
     years: DataTypes.ARRAY(DataTypes.INTEGER),
+    coordinates: DataTypes.ARRAY(DataTypes.DECIMAL),
   }, {
     sequelize,
     modelName: 'deals',

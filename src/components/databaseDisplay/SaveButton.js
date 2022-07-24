@@ -29,6 +29,7 @@ export default function SaveButton() {
         capRate,
         costOfCapital,
         salePrice,
+        coordinates
     } = useContext(InputContext);
   
     const {
@@ -62,7 +63,8 @@ export default function SaveButton() {
         propertyIncome: propertyIncome,
         propertyCashFlows: propertyCashFlows,
         propertyNpv: propertyNpv,
-        years: years
+        years: years,
+        coordinates: coordinates,
       }).then(() => {
         setDirect(true)
         alert("Calculation saved!")

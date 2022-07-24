@@ -108,27 +108,6 @@ export default function PropertyInput() {
       
         // update npv state
         updatePropertyNpv(npv)
-
-        console.log(
-          units,                  
-          rentPsf,
-          rentGrowth,
-          capex,
-          vacancyRate,
-          period,
-          purchasePrice,
-          capRate,
-          costOfCapital,
-          propertyType,
-          propertyClass,
-          updateAddress,
-          salePrice,
-          coordinates,
-          propertyIncome,
-          propertyCashFlows,
-          propertyNpv,
-          years,
-        )
   }
 
   // function to get map coordinates
