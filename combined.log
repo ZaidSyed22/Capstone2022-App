@@ -22,3 +22,9 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/users","Time":"07/21/2022, 7:22:42 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"POST","Body":{"email":"he@gmail.com"},"Content_Type":"application/json","Path":"/login","Time":"07/21/2022, 7:38:12 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"POST","Body":{"email":"he@gmail.com"},"Content_Type":"application/json","Path":"/login","Time":"07/21/2022, 7:38:36 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"email":"hellojohn@gmail.com","firstName":"Halo","lastName":"John","password":"john","username":"johnHalo"},"Content_Type":"application/json","Path":"/register","Time":"07/23/2022, 11:03:09 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/users","Time":"07/23/2022, 11:03:29 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"email":"hellojohn@gmail.com","password":"$2b$10$NmxcH.K6eVq5atg8"},"Content_Type":"application/json","Path":"/login","Time":"07/23/2022, 11:04:45 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"email":"hellojohn@gmail.com"},"Content_Type":"application/json","Path":"/login","Time":"07/23/2022, 11:05:20 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"email":"hellojohn@gmail.com","password":"hello"},"Content_Type":"application/json","Path":"/login","Time":"07/23/2022, 11:06:08 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"email":"hellojohn@gmail.com","password":"john"},"Content_Type":"application/json","Path":"/login","Time":"07/23/2022, 11:06:22 pm"},"service":"capstone22"}
