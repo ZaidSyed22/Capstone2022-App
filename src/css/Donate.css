@@ -1,0 +1,22 @@
+
+.donate-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    max-width: 80%;
+    margin: 200px;
+    height: 10px;
+}
+
+.text-box { 
+    font-size: 20px;
+    background-color: lightgray;
+    margin: 100px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
