@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import "../css/App.css";
 import "../css/Navbar.css";
 import Home from "./Home";
@@ -10,10 +9,11 @@ import Map from "./map/Map";
 
 import { InputProvider } from '../context/InputContext'
 import { OutputProvider } from '../context/OutputContext'
-import Login from './Login';
 import SaveButton from './databaseDisplay/SaveButton';
 import SavedDeal from "./databaseDisplay/SavedDeal";
+import Login from './Login';
 import Signup from './Signup';
+import Donate from "./Donate";
 
 function App() {
   return (
@@ -23,6 +23,18 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <Home />
+            </Route>
+
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+
+            <Route path="/signup" exact>
+              <Signup />
+            </Route>
+
+            <Route path="/donate" exact>
+              <Donate />
             </Route>
 
             <Route path="/PropertyInput.js" exact>
@@ -49,17 +61,10 @@ function App() {
         </OutputProvider>
       </Route> */}
 
-      <Route path="./map/Map.js" exact>  
+      {/* <Route path="./map/Map.js" exact>  
       <Map />
-      </Route>
+      </Route> */}
 
-      <Route path="/login" exact>  
-      <Login />
-      </Route>
-
-      <Route path="/signup" exact>  
-      <Signup />
-      </Route>
   </Switch>
 </Pagetemplate>
 </Router>

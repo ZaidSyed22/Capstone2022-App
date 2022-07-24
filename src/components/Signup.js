@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link, } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 
 function Signup() {
- // const navigate =useNavigate()
+//  const navigate =useNavigate()
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,7 +32,7 @@ function Signup() {
     
     .then(res => res.json())
     .then(data => {
-      //navigate("/Login.js")
+      // navigate("/Login.js")
       console.log("data", data)
     })
   }
@@ -50,7 +50,7 @@ function Signup() {
     
     .then(res => res.json())
     .then(data => {
-      //navigate("/")
+      // navigate("/")
       console.log("data", data)
     })
   }
@@ -74,7 +74,7 @@ function Signup() {
 if (authMode === "signin") {
   return (
     <div className="Login">
-    <form className="login-form">
+    <form className="login-form" onSubmit={ (e) => loginUser(e)}>
       <div className="login-form-content">
         <h3 className="login-title">Sign In</h3>
         <div className="form-group mt-3">
@@ -103,7 +103,7 @@ if (authMode === "signin") {
           </button>
         </div>
         <p className="forgot-password text-right mt-2">
-          New Member <a href="/signup">Register</a>
+          New Member Click <a href="#" onClick={changeAuthMode}>Register</a>
         </p>
       </div>
     </form>
@@ -171,14 +171,12 @@ if (authMode === "signin") {
           />
         </div>
         <div className="d-grid gap-2 mt-3">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" onClick={changeAuthMode}>
             Submit
           </button>
         </div>
-        <p className="forgot-password text-right mt-2">
-          Return to <a href="/login"> Login</a>
-        </p>
       </div>
+  
     </form>
   </div>
   )

@@ -7,14 +7,11 @@ const methodOverride = require('method-override');
 const winston = require('winston');
 const moment = require('moment');
 const pg = require('pg-promise')();
-<<<<<<< HEAD
 const debug = require("debug")("server");
-=======
 const router = express.Router();
 const {User} = require('./models')
 
 const saltRounds = bcrypt.genSaltSync(10)
->>>>>>> 4c23a9c (sign up, login,)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -68,15 +65,6 @@ app.post('/saveDeal', async function (req, res) {
             rentGrowth: req.body.rentGrowth,
             propertyType: req.body.propertyType,
             propertyClass: req.body.propertyClass,
-            capex: req.body.capex,
-            vacancyRate: req.body.vacancyRate,
-            capRate: req.body.capRate,
-            costOfCapital: req.body.costOfCapital,
-            salePrice: req.body.salePrice,
-            propertyIncome: req.body.propertyIncome,
-            propertyCashFlows: req.body.propertyCashFlows,
-            propertyNpv: req.body.propertyNpv,
-            years: req.body.years
          }
     ) 
 
@@ -234,32 +222,13 @@ app.post("/login", async (req, res) => {
                 password: user.password
             })
         } else {
-            res.send("oops!, Incorrect Info")
+            res.send("oops!, incorrect password")
         }
     } else{
-        res.send("oops!, User Not Found")
+        res.send("oops!, user not found")
     } 
 })
 
-//route to link Signup page
-app.get('/register', (req, res) => {
-   
-    res.render('register', {
-        locals: {
-           
-            }
-        });
-    })
-
-//route to link  Login page     
-app.get('/login', (req, res) => {
-   
-        res.render('login', {
-            locals: {
-                
-                }
-            });
-        })
 
 
 app.listen(2022, async ()=> debug('now running on port ${port}'))
