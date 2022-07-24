@@ -1,0 +1,24 @@
+#bldgBox{
+ max-width: 1000px;
+ font-size: small;
+}
+
+#propertyInfo{
+    font-size: smaller;
+    text-align: center;
+    vertical-align: middle;
+  
+}
+
+#cardTitles{
+    font-size: medium;
+}
+
+.leaflet-container {
+    height: 350px;
+}
+
+#button{
+    margin-left: 75px;
+    margin-right: 75px;
+}

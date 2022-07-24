@@ -69,7 +69,8 @@ app.post('/saveDeal', async function (req, res) {
             propertyIncome: req.body.propertyIncome,
             propertyCashFlows: req.body.propertyCashFlows,
             propertyNpv: req.body.propertyNpv,
-            years: req.body.years
+            years: req.body.years,
+            coordinates: req.body.coordinates
          }
     ) 
 

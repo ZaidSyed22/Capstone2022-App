@@ -71,6 +71,9 @@ module.exports = {
       years: {
         type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
+      coordinates: {
+        type: Sequelize.ARRAY(Sequelize.DECIMAL)
+      }, 
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

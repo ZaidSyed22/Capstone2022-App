@@ -46,10 +46,10 @@ function App() {
 
             <Route path="./Login.js" exact>
               <Login />
-            </Route>
-          </Switch>
-        </Pagetemplate>
-      </Router>
+                </Route>
+              </Switch>
+            </Pagetemplate>
+          </Router>
     </div>
   );
 }
