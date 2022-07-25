@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/Login.css';
 
 
 function Login () {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginUser = async (e) => {
+    e.preventDefault()
+     fetch(`http://localhost:2022/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+    
+    .then(res => res.json())
+    .then(data => {
+      // navigate("/")
+      console.log("data", data)
+    })
+  }
+
+  function handleEmail(e) {
+    setEmail(e.target.value)
+  }
+  function handlePassword(e) {
+    setPassword(e.target.value)
+  }
+
   return (
     <div className="Login">
       <form className="login-form">
@@ -14,6 +43,7 @@ function Login () {
               type="email"
               className="form-control mt-1"
               placeholder="enter email"
+              onChange={(e) => handleEmail(e)}
             />
           </div>
           <div className="form-group mt-3">
@@ -22,10 +52,11 @@ function Login () {
               type="password"
               className="form-control mt-1"
               placeholder="enter password"
+              onChange={(e) => handlePassword(e)}
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button type="button" className="btn btn-primary" onClick={loginUser}>
               Submit
             </button>
           </div>
