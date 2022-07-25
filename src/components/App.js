@@ -47,6 +47,7 @@ function App() {
                 </OutputProvider>
               </InputProvider>
             </Route>
+            
             <Route path="/deals" exact>
               <InputProvider>
                   <OutputProvider>
