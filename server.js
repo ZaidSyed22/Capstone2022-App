@@ -119,6 +119,24 @@ app.get('/yourDeals', async (req, res) => {
     }
 });
 
+app.delete('/delDeal/:id', async (req, res) => {
+    let deleteDeal =  await deals.findOne ({
+        where: {
+            id: req.params.id
+        }
+    })
+
+    if (deleteDeal == null) {
+        res.send (`${req.params.id} is not a valid id`)
+    } else {
+    await deals.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+
+    }
+})
 
 //delete user & the saved deals from the user
 app.delete('/user/:id', async (req, res) => {
@@ -146,25 +164,25 @@ app.delete('/user/:id', async (req, res) => {
 })
 
 //Changing deal info
-app.put('/savedDeals/:id', async (req, res) => {
-    let userid = req.params.id
+app.put('/editDeal/:id', async (req, res) => {
+    let postID = req.params.id
 
-    await deals.update(
+    let id = await deals.update(
         {
-        username: req.body.username,
-        brand:req.body.brand,
-        model:req.body.model,
-        year:req.body.year,
-        mileage: req.body.mileage,
-        range_mi:req.body.range_mi,
-        range_km:req.body.range_km,
-        kWh_100mi:req.body.kWh_100mi,
-        kWh_100km:req.body.kWh_100km
+            units: req.body.units,
+            propertyType: req.body.propertyType,
         }, {
             where:{
-                id: userid
+                id: postID
             }
-        })
+        })    
+        
+        if (id.city == null) {
+            res.statusCode = 400;
+            res.send('Unsuccessful');
+        } else {
+            res.send(id)
+        }
     
     
 });

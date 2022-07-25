@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import Form from "react-bootstrap/Form";
 import { Bar } from "react-chartjs-2";
+import { Redirect } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { defaultMarker } from "../map/popup";
 import { popupContent, popupText } from "../map/popup";
@@ -20,7 +21,10 @@ export default function SavedDeal() {
   const [edit, setEdit] = useState(false);
   const [units, setUnits] = useState("");
   const [propertyType, setPropertyType] = useState("");
-  const [user, setUser] = useState("guest");
+  const [progress, setProgress] = useState(false);
+  const [postID, setPostID] = useState("");
+  const [direct, setDirect] = useState(false);
+  const [update, setUpdate] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:2022/deals`).then((res) => {
@@ -28,11 +32,38 @@ export default function SavedDeal() {
     });
   }, []);
 
+  async function handlePost() {
+await axios.put(`http://localhost:2022/editDeal/${postID}`,{
+  units: units,
+  propertyType: propertyType,
+}).then((res) => {
+ setUpdate(res.data)
+})
+
+if (setUpdate[0].city != null) {
+  window.location.reload();
+} 
+
+  };
+
+ async function handleDelete() {
+    await axios.delete(`http://localhost:2022/delDeal/${postID}`,{})
+    .then(() => {
+ alert('Deleted!')
+})
+window.location.reload();
+  };
+
+
+
+  if (direct) {
+    return <Redirect to='/deals'/>;}
+
   return (
     <div>
       {building.map((property, i) => {
         return (
-          <div className='"justify-content-md-center'>
+          <div className='"justify-content-md-center'> 
             <div
               className="w-responsive text-center mx-auto p-3 mt-2"
               id="bldgBox"
@@ -47,7 +78,7 @@ export default function SavedDeal() {
                       <Col xs={4}>
                         Address: {property.address}, {property.city}
                       </Col>
-                      <Col xs={2}>Size: {property.squareFeet} square feet</Col>
+                      <Col xs={2}>Size: {(property.squareFeet * 1).toLocaleString('en-US')} square feet</Col>
                       <Col xs={2}>Unit(s): {property.units}</Col>
                     </Row>
                   </Container>
@@ -86,7 +117,10 @@ export default function SavedDeal() {
                         <Card.Body>
                           <div id="cardTitles">Projection Summary</div>
                           <br></br>
-                          Purchase Price: ${property.purchasePrice} | Type:{" "}
+                          Purchase Price: {(property.purchasePrice * 1).toLocaleString("en-US", {
+                              style: "currency",
+                              currency: "USD",
+                            })} | Type:{" "}
                           {property.propertyType} | Class:{" "}
                           {property.propertyClass}
                           <Table striped bordered hover size="sm">
@@ -170,7 +204,7 @@ export default function SavedDeal() {
                             deal:
                             <br />
                             <br />
-                            {property.propertyNpv?.toLocaleString("us-US", {
+                            {(property.propertyNpv * 1).toLocaleString("en-US", {
                               style: "currency",
                               currency: "USD",
                             })}
@@ -188,7 +222,7 @@ export default function SavedDeal() {
                             holding period:
                             <br />
                             <br />
-                            {property.salePrice?.toLocaleString("us-US", {
+                            {(property.salePrice * 1).toLocaleString("us-US", {
                               style: "currency",
                               currency: "USD",
                             })}
@@ -200,13 +234,16 @@ export default function SavedDeal() {
                   <br></br>
                   <Button
                     variant="info"
-                    id="buttons"
+                    id="buttonEdit"
                     onClick={() => setEdit(!edit)}
                     aria-controls="example-collapse-text"
                     aria-expanded={edit}
                   >
                     edit
                   </Button>{" "}
+
+                  <br></br>
+
                   <Collapse in={edit}>
                     <Form>
                       <Row className="mb-3">
@@ -232,19 +269,27 @@ export default function SavedDeal() {
                             <option>Hotel</option>
                           </Form.Select>
                         </Form.Group>
-                      </Row>
 
+                        <Form.Group as={Col}>
+                          <Form.Label>Post ID #: *</Form.Label>
+                          <Form.Control
+                            type="number"
+                            onChange={(e) => setPostID(e.target.valueAsNumber)}
+                          />
+                        </Form.Group>
+                      </Row>
+                            <p id="instruction">*Your post ID can be found at the bottom right corner of the post.</p>
                       <br></br>
 
-                      <Button variant="primary" type="submit" id="button">
+                      <Button variant="primary" type="submit" id="button" onClick={handlePost}>
                         Save
                       </Button>
 
-                      <Button variant="warning" type="submit" id="button">
+                      <Button variant="warning" type="submit" id="button" onClick={() => setProgress(!progress)}>
                         Complete
                       </Button>
 
-                      <Button variant="danger" type="submit" id="button">
+                      <Button variant="danger" type="submit" id="button" onClick={handleDelete}>
                         Delete
                       </Button>
                     </Form>
