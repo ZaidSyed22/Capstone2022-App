@@ -4632,3 +4632,7 @@
 {"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/delDeal/1","Time":"07/25/2022, 11:48:13 am"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/25/2022, 11:48:13 am"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/25/2022, 11:48:13 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"OPTIONS","Body":{},"Path":"/saveDeal","Time":"07/25/2022, 7:08:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"POST","Body":{"address":"285 Fulton St","capRate":0.04,"capex":0.05,"city":"New York","coordinates":[40.6935367,-73.98247],"costOfCapital":0.06,"period":10,"propertyClass":"A","propertyIncome":[3610000,3646100,3682561,3719386.61,3756580.48,3794146.28,3832087.74,3870408.62,3909112.71,3948203.83],"propertyNpv":-362361028.83,"propertyType":"Office","purchasePrice":500000000,"rentGrowth":1,"rentPsf":800,"salePrice":98705095.75,"squareFeet":5000,"state":"NY","units":500,"username":"capstone22","vacancyRate":0.05,"years":[1,2,3,4,5,6,7,8,9,10]},"Content_Type":"application/json","Path":"/saveDeal","Time":"07/25/2022, 7:08:26 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/25/2022, 7:08:34 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/25/2022, 7:08:34 pm"},"service":"capstone22"}
