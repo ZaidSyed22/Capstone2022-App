@@ -17,7 +17,9 @@ This app was created for people who invest (or hope to invest) in real estate bu
 ## ProfitRain Demo Video: 
    - <a href="">Link to our Demo Video</a>           
 
-## NPM Packages Used:
+## NPM Packages/Extension Used:
+- Browser Extension CORS (Cross-Origin Resource Sharing) Required 
+- Context API
 - React
 - React-bootstrap
 - React-chartjs
@@ -46,22 +48,24 @@ This app was created for people who invest (or hope to invest) in real estate bu
 ## Project Screenshot(s):
 
 - Home/Login Page:
-![alt text]()
+ ![](src/assets/homePage.png)
 
+- Register Page:
+ ![](src/assets/registerPage.png)
 
 - Calculator Page:
-![alt text]()
+ ![](src/assets/calculatorImageOne.png)
 
-![alt text]()
+ ![](src/assets/calculatorImageTwo.png)
 
-![alt text]()
+ ![](src/assets/calculatorImageThree.png)
+ 
+- Deals Page:
 
-- Deals Page
-![alt text]()
-![alt text]()
+ ![](src/assets/dealsImageOne.png)
 
 - Support The Devs Page:
-![alt text]()
+ ![](src/assets/supportPage.png)
 
 ## Here are some terms that may be useful from Investopedia:
 
@@ -76,20 +80,20 @@ This app was created for people who invest (or hope to invest) in real estate bu
 - User Sessions
 - Error Handling
 - Fully Functional/Responsive CRUD API (edit,update,delete)
-  ![alt text]()
+ ![](src/assets/dealsImageTwo.png)
 
 ## Developer(s):
 
  - Daniel Donato
     - [Github](https://github.com/dgdonato)
-    - ![alt text]()
+    - <img src="src/assets/danielprofile.png" width="200">
 
  - Sam Moon
     -  [Github](https://github.com/LunaTruffles)
     - [LinkedIn](https://www.linkedin.com/in/samsdmoon/)
-    -  ![alt text]()
+    - <img src="src/assets/samprofile.png" width="200">
 
  - Zaid Syed
     - [Github](https://github.com/ZaidSyed22)
     - [LinkedIn](https://www.linkedin.com/in/zaid-syed-5a29261b4/)
-    - ![alt text]()
+    - <img src="src/assets/zaidprofile.png" width="200">
