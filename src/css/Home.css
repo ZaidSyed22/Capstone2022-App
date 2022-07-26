@@ -7,40 +7,36 @@
     max-width: 80%;
     margin: auto;
     height: 80%;
- 
-    
+    font-family:'Times New Roman', Times, serif
     
 }
-
 .text-large { 
+    
     font-size: 40px;
+    margin: 20px;
     background-color: lightgray;
-    margin: 50px;
     background-color: rgba(0,0,0,0.5);
     color: white;
     text-align: center;
     border-radius: 20px;
-  
 }
 
 .text-medium{
     font-size: 20px;
     background-color: lightgray;
-    margin: 100px;
+    margin: 40px;
     border-radius: 10px;
     background-color: rgba(0,0,0,0.5);
     color: white;
     text-align: center;
   
 }
-
 .text-small { 
     font-size: 20px;
-    margin: 10px;
+    margin: 5px;
     background: lightgray;
     background-color: rgba(0,0,0,0.5);
     color: white;
     text-align: center;
     border-radius: 10px;
- 
 }
