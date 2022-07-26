@@ -15,7 +15,7 @@ This app was created for people who invest (or hope to invest) in real estate bu
    - <a href="">Link to our Live Website</a>
 
 ## ProfitRain Demo Video: 
-   - <a href="">Link to our Demo Video</a>           
+   - <a href="https://www.youtube.com/watch?v=g6yMQ9-lit4">Link to our Demo Video</a>           
 
 ## NPM Packages/Extension Used:
 - Browser Extension CORS (Cross-Origin Resource Sharing) Required 
