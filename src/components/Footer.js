@@ -10,7 +10,7 @@ import '../css/Footer.css'
 
 function Footer() {
   return (
-    <div class="footer-spacing">
+    <div class="footer-spacing" id='footer'>
     <NB bg="dark" variant="dark" fixed="bottom" >
       <Container fluid>
             <p className='footer-text'><b>About Us:</b>
