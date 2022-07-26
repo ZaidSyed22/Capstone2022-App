@@ -23,9 +23,6 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <Home />
-            </Route>
-
-            <Route path="/login" exact>
               <Login />
             </Route>
 
@@ -37,7 +34,7 @@ function App() {
               <Donate />
             </Route>
 
-            <Route path="/PropertyInput.js" exact>
+            <Route path="/calculator" exact>
               <InputProvider>
                 <OutputProvider>
                   <PropertyInput />

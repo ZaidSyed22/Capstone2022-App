@@ -14,11 +14,10 @@ function Navbar() {
     <div id="navbar">
     <NB.Brand><img src={logo} alt='logo' width="250" height="79"/></NB.Brand>
     <div><NavLink to= "/">Home</NavLink></div>  
-    <div><NavLink to= "/PropertyInput.js">Property Input</NavLink></div>
+    <div><NavLink to= "/calculator">Calculator</NavLink></div>
     {/* <div><NavLink to= "/Properties.js">Properties</NavLink></div> */}
     <div><NavLink to= "/deals">Deals</NavLink></div>
     <div><NavLink to= "/signup">Signup</NavLink></div>
-    <div><NavLink to= "/login">Login</NavLink></div>
     <div><NavLink to= "/donate">Support the Devs</NavLink></div>
 </div>
 )
