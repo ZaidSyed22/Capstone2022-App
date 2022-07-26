@@ -11,7 +11,6 @@ import { InputProvider } from '../context/InputContext'
 import { OutputProvider } from '../context/OutputContext'
 import SaveButton from './databaseDisplay/SaveButton';
 import SavedDeal from "./databaseDisplay/SavedDeal";
-import Login from './Login';
 import Signup from './Signup';
 import Donate from "./Donate";
 
@@ -23,7 +22,6 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <Home />
-              <Login />
             </Route>
 
             <Route path="/signup" exact>

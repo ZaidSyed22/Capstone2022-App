@@ -4682,3 +4682,13 @@
 {"level":"info","message":{"Action":"POST","Body":{"email":"z@dgcrafts.com","password":"Hello"},"Content_Type":"application/json","Path":"/login","Time":"07/25/2022, 8:18:48 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/25/2022, 8:18:52 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/25/2022, 8:18:52 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 10:16:51 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 10:16:51 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 10:39:41 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 10:39:42 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 11:04:52 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 11:04:52 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 11:53:00 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 11:53:00 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 11:56:02 am"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 11:56:02 am"},"service":"capstone22"}

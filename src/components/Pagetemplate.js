@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Pagetemplate(props) {
   return (
     <div>
-        <Navbar />
+        <NavBar />
         {props.children} 
         <Footer />  
     </div>
