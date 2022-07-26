@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import '../css/Login.css';
 
 
@@ -6,6 +7,7 @@ function Login () {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const[direct,setDirect] = useState(false)
 
   const loginUser = async (e) => {
     e.preventDefault()
@@ -20,10 +22,12 @@ function Login () {
     
     .then(res => res.json())
     .then(data => {
-      // navigate("/")
-      console.log("data", data)
+      setDirect(true)
+      alert("Successful!")
     })
   }
+  if (direct) {
+    return <Redirect to='/deals'/>;}
 
   function handleEmail(e) {
     setEmail(e.target.value)
@@ -61,7 +65,7 @@ function Login () {
             </button>
           </div>
           <p className="forgot-password text-right mt-2">
-            New Member Double Click <a href="/signup">Register</a>
+            New Member <a href="/signup">Register</a>
           </p>
         </div>
       </form>

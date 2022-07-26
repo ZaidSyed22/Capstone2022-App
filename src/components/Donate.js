@@ -14,7 +14,7 @@ import '../css/Donate.css';
         <b>
         </b>
         <p class="text-small">
-          Future ideas include: 
+          Future ideas but not limited to: PassportAuth to login via SocialMedia, Sessions, Error Handling, etc...
         </p>
         <b>
         </b>

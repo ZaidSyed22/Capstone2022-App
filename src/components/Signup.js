@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link,  } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 
 function Signup() {
@@ -9,6 +9,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const[direct,setDirect] = useState(false)
 
   const createUser =   (e) => {
     console.log("Welcome")
@@ -27,9 +28,8 @@ function Signup() {
     
     .then(res => res.json())
     .then(data => {
-      // navigate("/Login.js")
+      setDirect(true)
       alert("Successfully registered!")
-      console.log("data", data)
     })
   }
 
@@ -48,6 +48,10 @@ function Signup() {
   function handlePassword(e) {
     setPassword(e.target.value)
   }
+
+
+  if (direct) {
+    return <Redirect to='/'/>;}
 
   return (
     <div className="Login">
