@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
-
+import '../css/Signup.css'
 
 function Signup() {
 //  const navigate =useNavigate()
@@ -54,7 +54,8 @@ function Signup() {
     return <Redirect to='/'/>;}
 
   return (
-    <div className="Login">
+    <div id="signupBody">
+    <div className="Login" id="signupForm">
     <form className="login-form" onSubmit={ (e) => createUser(e)}>
       <div className="login-form-content">
         <h3 className="login-title">Register</h3>
@@ -120,6 +121,7 @@ function Signup() {
       </div>
   
     </form>
+  </div>
   </div>
   )
 }

@@ -1,15 +1,11 @@
-#donateBody{
+#signupBody{
     background-image: url('/src/assets/matthew-henry-VviFtDJakYk-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
-    height: 1150px;
+    height: 1150px
 }
 
-#donateCard{
-    max-width: 1000px;
-    font-size: small;
-    opacity: .9;
-   }
-
-
+#signupForm {
+    padding-top: 200px;
+}

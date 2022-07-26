@@ -1,3 +1,10 @@
+#homeBody{
+    background-image: url('/src/assets/matthew-henry-VviFtDJakYk-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 1150px;
+}
 
 .Home {
     display: flex;
@@ -8,17 +15,14 @@
     margin: auto;
     height: 80%;
     font-family:'Times New Roman', Times, serif
-    
 }
+
 .text-large { 
-    
     font-size: 40px;
-    margin: 20px;
-    background-color: lightgray;
-    background-color: rgba(0,0,0,0.5);
-    color: white;
+    margin: 27px;
+    background-color: rgba(229, 251, 238, 0.5);
     text-align: center;
-    border-radius: 20px;
+    border-radius: 50px;
 }
 
 .text-medium{
@@ -33,10 +37,16 @@
 }
 .text-small { 
     font-size: 20px;
-    margin: 5px;
-    background: lightgray;
-    background-color: rgba(0,0,0,0.5);
-    color: white;
+    margin: 50px;
     text-align: center;
     border-radius: 10px;
 }
+#cardBody{
+    background-color: rgb(238, 255, 255);
+}
+
+#homeCard{
+    max-width: 1000px;
+    font-size: small;
+    opacity: .8;
+   }

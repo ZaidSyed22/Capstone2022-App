@@ -1,18 +1,8 @@
-#navbar{
-    align-items: right;
-    background-color: whitesmoke;
-    color: white;
-    display: flex;
-    text-shadow: 5px 5px 5px whitesmoke;
-  
-   
-}
 
-#navbar div {
-    font-size: 15px;
-    margin: 40px;
-    background: linear-gradient(-45deg, red, #e1e1e1, #fef68a,#97fff5); 
-    background-size: 400% 400%;
+#navButton{
+    margin-left: 25px;
+    margin-right:  25px;
+    
 }
 
 
