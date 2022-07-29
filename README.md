@@ -11,8 +11,8 @@ This app was created for people who invest (or hope to invest) in real estate bu
 
    - If you are satistfied with the calculations, you can click save to save the deal to the datadase. After saving your calculations, you will be alerted & redirected to the Deals page.
 
-## ProfitRain Live Webpage:
-   - <a href="https://exquisite-snickerdoodle-378c4f.netlify.app/">Link to our Live Website</a>
+## ProfitRain Live Webpage (Netlify):
+   - <a href="https://62e358871820653227078369--exquisite-snickerdoodle-378c4f.netlify.app//">Link to our Live Website</a>
 
 ## ProfitRain Demo Video: 
    - <a href="https://www.youtube.com/watch?v=g6yMQ9-lit4">Link to our Demo Video</a>           
