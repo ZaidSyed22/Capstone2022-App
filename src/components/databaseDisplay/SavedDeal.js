@@ -232,7 +232,7 @@ window.location.reload();
                     </Col>
                   </Row>
                   <br></br>
-                  <Button
+                  {/* <Button
                     variant="info"
                     id="buttonEdit"
                     onClick={() => setEdit(!edit)}
@@ -293,7 +293,7 @@ window.location.reload();
                         Delete
                       </Button>
                     </Form>
-                  </Collapse>
+                  </Collapse> */}
                 </Card.Body>
 
                 <br></br>
