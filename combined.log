@@ -4793,3 +4793,5 @@
 {"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/delDeal/8","Time":"07/26/2022, 6:45:31 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 6:45:31 pm"},"service":"capstone22"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 6:45:31 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 7:25:40 pm"},"service":"capstone22"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/deals","Time":"07/26/2022, 7:25:41 pm"},"service":"capstone22"}
