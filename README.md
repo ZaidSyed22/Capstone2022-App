@@ -11,13 +11,15 @@ This app was created for people who invest (or hope to invest) in real estate bu
 
    - If you are satistfied with the calculations, you can click save to save the deal to the datadase. After saving your calculations, you will be alerted & redirected to the Deals page.
 
-## ProfitRain Netlify Webpage:
-   - <a href="">Link to our Live Website</a>
+## ProfitRain Live Webpage (Netlify):
+   - <a href="https://62e358871820653227078369--exquisite-snickerdoodle-378c4f.netlify.app/">Link to our Live Website</a>
 
 ## ProfitRain Demo Video: 
-   - <a href="">Link to our Demo Video</a>           
+   - <a href="https://www.youtube.com/watch?v=g6yMQ9-lit4">Link to our Demo Video</a>           
 
-## NPM Packages Used:
+## NPM Packages/Extension Used:
+- Browser Extension CORS (Cross-Origin Resource Sharing) Required 
+- Context API
 - React
 - React-bootstrap
 - React-chartjs
@@ -46,22 +48,24 @@ This app was created for people who invest (or hope to invest) in real estate bu
 ## Project Screenshot(s):
 
 - Home/Login Page:
-![alt text]()
+ ![](src/assets/homePage.png)
 
+- Register Page:
+ ![](src/assets/registerPage.png)
 
 - Calculator Page:
-![alt text]()
+ ![](src/assets/calculatorImageOne.png)
 
-![alt text]()
+ ![](src/assets/calculatorImageTwo.png)
 
-![alt text]()
+ ![](src/assets/calculatorImageThree.png)
+ 
+- Deals Page:
 
-- Deals Page
-![alt text]()
-![alt text]()
+ ![](src/assets/dealsImageOne.png)
 
 - Support The Devs Page:
-![alt text]()
+ ![](src/assets/supportPage.png)
 
 ## Here are some terms that may be useful from Investopedia:
 
@@ -76,20 +80,20 @@ This app was created for people who invest (or hope to invest) in real estate bu
 - User Sessions
 - Error Handling
 - Fully Functional/Responsive CRUD API (edit,update,delete)
-  ![alt text]()
+ ![](src/assets/dealsImageTwo.png)
 
 ## Developer(s):
 
  - Daniel Donato
     - [Github](https://github.com/dgdonato)
-    - ![alt text]()
+    - <img src="src/assets/danielprofile.png" width="200">
 
  - Sam Moon
     -  [Github](https://github.com/LunaTruffles)
     - [LinkedIn](https://www.linkedin.com/in/samsdmoon/)
-    -  ![alt text]()
+    - <img src="src/assets/samprofile.png" width="200">
 
  - Zaid Syed
     - [Github](https://github.com/ZaidSyed22)
     - [LinkedIn](https://www.linkedin.com/in/zaid-syed-5a29261b4/)
-    - ![alt text]()
+    - <img src="src/assets/zaidprofile.png" width="200">
